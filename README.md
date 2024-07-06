@@ -6,7 +6,7 @@
 
 ### 1: Клонировать репозиторий
 
-Склонируйте репозиторий с помощью Git: git clone https://github.com/romatrooy/practica.git
+Склонируйте репозиторий с помощью Git: git clone https://github.com/NikMos933/SummerPractice
 
 ### 2: Перейти в папку проекта
 
