@@ -105,21 +105,21 @@ class MainWindow:
         if self.image is None:
             self.open_error()
         else:
-            red, green, blue, alpha = self.image.split()
-            dark = red.point(lambda _: 0)
+            channels = self.image.split()
+            dark = channels[0].point(lambda _: 0)
             match self.var.get():
                 case 0:
-                    krasnoye_sliyaniye = Image.merge("RGB", (red, dark, dark))
+                    krasnoye_sliyaniye = Image.merge("RGB", (channels[0], dark, dark))
                     photo = ImageTk.PhotoImage(krasnoye_sliyaniye)
                     self.image_canvas.create_image(0, 0, anchor=NW, image=photo)
                     self.image_canvas.image = photo
                 case 1:
-                    zelenoye_sliyaniye = Image.merge("RGB", (dark, green, dark))
+                    zelenoye_sliyaniye = Image.merge("RGB", (dark, channels[1], dark))
                     photo = ImageTk.PhotoImage(zelenoye_sliyaniye)
                     self.image_canvas.create_image(0, 0, anchor=NW, image=photo)
                     self.image_canvas.image = photo
                 case 2:
-                    sineye_sliyaniye = Image.merge("RGB", (dark, dark, blue))
+                    sineye_sliyaniye = Image.merge("RGB", (dark, dark, channels[2]))
                     photo = ImageTk.PhotoImage(sineye_sliyaniye)
                     self.image_canvas.create_image(0, 0, anchor=NW, image=photo)
                     self.image_canvas.image = photo
